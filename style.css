@@ -11,19 +11,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(images/3.jpg) no-repeat center/cover;
+  background: url(https://wallpapercave.com/wp/wp12530112.jpg) no-repeat
+    center/cover;
   user-select: none;
   overflow: hidden;
 }
 
 .slider {
   position: absolute;
-  top: 10%;
+  top: calc(60% - 200px);
+  transform: perspective(1000px) rotateX(calc(var(--x) * 1deg))
+    rotateY(var(--y));
   width: 150px;
   height: 200px;
   transform-style: preserve-3d;
-  transform: perspective(1000px) rotateX(-13deg) rotateY(var(--y));
-  transition: 1s
+  /* transition: 1s
     linear(
       0 0%,
       0.01 1.13%,
@@ -48,7 +50,8 @@ body {
       0.99 74.4%,
       1 86.4%,
       1 100%
-    );
+    ); */
+  transition: 0.2s linear;
 }
 
 .slider .item {
